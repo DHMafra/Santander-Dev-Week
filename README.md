@@ -1,16 +1,38 @@
-package org.example;
+# Santander Dev Week 2023
+Java RESTful API criada para a Santander Dev Week
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+## Diagrama de Classes
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+```mermaid
+classDiagram
+    class User {
+        -String nome
+        -Account account
+        -Feature[] features
+        -Card card
+        -News[] news
     }
+    class Account {
+        -String Number
+        -String Agency
+        -String Balance
+        -String Limit
+    }
+    class Feature {
+        -String icon
+        -String description
+    }
+    class Card {
+        -String Number
+        -float Limit
+    }
+    class News {
+        -String icon
+        -String Description
+    }
+    User "1" -- "1" Account 
+    User "1" -- "N" Feature 
+    User "1" -- "1" Card 
+    User "1" -- "N" News 
+```
+ 
